@@ -15,14 +15,14 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Select Id, Descripcion from CATEGORIAS");
+                datos.setearConsulta(Diccionario.LISTAR_CATEGORIAS);
                 datos.ejecutarLectura();
 
                  while (datos.Lector.Read())
                 {
                    Categoria aux = new Categoria();
-                    aux.ID = (int)datos.Lector["Id"];
-                    aux.Descripcion = (String)datos.Lector["Descripcion"];
+                    aux.ID = (int)datos.Lector["id"];
+                    aux.Descripcion = (String)datos.Lector["nombreMarca"];
 
                    lista.Add(aux);            
                 }

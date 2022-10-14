@@ -86,15 +86,15 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update ARTICULOS set Codigo = @Codigo , Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria= @IdCategoria, ImagenUrl = @ImagenUrl, Precio = @Precio where Id= @Id");
-                datos.setearParametro("@Codigo", articulo.Codigo);
-                datos.setearParametro("@Nombre", articulo.Nombre);
-                datos.setearParametro("@Descripcion", articulo.Descripcion);
+                datos.setearConsulta(Diccionario.MODIFICAR_ARTICULO);
+                datos.setearParametro("@codigo", articulo.Codigo);
+                datos.setearParametro("@nombre", articulo.Nombre);
+                datos.setearParametro("@descripcion", articulo.Descripcion);
                 datos.setearParametro("@IdMarca", articulo.Marca.ID);
                 datos.setearParametro("@IdCategoria", articulo.Categoria.ID);
-                datos.setearParametro("@ImagenUrl", articulo.URLImagen);
-                datos.setearParametro("@Precio", articulo.Precio);
-                datos.setearParametro("@Id", articulo.Id);
+                datos.setearParametro("@imagenUrl", articulo.URLImagen);
+                datos.setearParametro("@precio", articulo.Precio);
+                datos.setearParametro("@ID", articulo.Id);
 
                 datos.ejecutarAccion();
                 
@@ -114,7 +114,7 @@ namespace negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("delete from ARTICULOS where Id= @id");
+                datos.setearConsulta(Diccionario.ELIMINAR_ARTICULO);
                 datos.setearParametro("id", id);
                 datos.ejecutarAccion(); 
             }
