@@ -58,7 +58,7 @@
             </div>
         </div>    --%>
 
-        <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="Default.aspx">Catalogo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
@@ -73,10 +73,10 @@
           <a class="nav-link disabled">Articulo:</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <div class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Búsqueda..." aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+      </div>
     </div>
   </div>
 </nav>
@@ -84,7 +84,7 @@
 
 
 
-        <div class="container body-content">
+        <div class="container">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />

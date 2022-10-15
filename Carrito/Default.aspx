@@ -4,7 +4,6 @@
 
     <h1 class="title"> Catalogo de Articulos</h1>
     <hr />
-    <div class="container">
         <%-- 
         <div class="row">
             <% int i = 1;
@@ -35,15 +34,13 @@
                             <div class="card-body">
                                 <h4 class="card-title"><%#Eval("Nombre")%></h4>
                                 <p class="card-text"><%#Eval("Descripcion")%></p>
-                            </div>
-                           <%--<a class="btn btn-primary mx-2 my-1" href="Carrito.aspx?id=<%#Eval("Id")%>">Agregar</a>--%>
-                            <asp:Button Text="Agregar a Carrito" CssClass="btn btn-primary" runat="server" id="btnAgregar" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregar_Click"/>
+                            </div>                             
+                           <a class="btn btn-primary mx-2 my-1" href="Carrito.aspx?id=<%#Eval("Id")%>">Agregar</a>                        
                         </div>
                     </div>
             </ItemTemplate>
         </asp:Repeater>
 
         </div>
-     </div>
 
 </asp:Content>
