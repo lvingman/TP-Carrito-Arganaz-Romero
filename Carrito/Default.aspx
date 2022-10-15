@@ -5,6 +5,7 @@
     <h1 class="title"> Catalogo de Articulos</h1>
     <hr />
     <div class="container">
+        <%-- 
         <div class="row">
             <% int i = 1;
                 foreach (dominio.Articulo item in listaArticulos)
@@ -23,6 +24,26 @@
 
             <% } %>
         </div>
-    </div>
+         --%>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <asp:Repeater ID="Repeter" runat="server">
+            <ItemTemplate>
+                <div class="col">
+                        <div class="card" > 
+                            <img src="<%#Eval("URLImagen")%>" alt="Articulo" style="card-img-top" />
+                            <div class="card-body">
+                                <h4 class="card-title"><%#Eval("Nombre")%></h4>
+                                <p class="card-text"><%#Eval("Descripcion")%></p>
+                            </div>
+                           <%--<a class="btn btn-primary mx-2 my-1" href="Carrito.aspx?id=<%#Eval("Id")%>">Agregar</a>--%>
+                            <asp:Button Text="Agregar a Carrito" CssClass="btn btn-primary" runat="server" id="btnAgregar" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregar_Click"/>
+                        </div>
+                    </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
+        </div>
+     </div>
 
 </asp:Content>

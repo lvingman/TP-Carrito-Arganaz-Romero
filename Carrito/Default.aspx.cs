@@ -19,6 +19,17 @@ namespace Carrito
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
 
+            if (!IsPostBack) {
+            Repeter.DataSource = listaArticulos;
+            Repeter.DataBind();
+            }
+
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string valor = ((Button)sender).CommandArgument;
+
         }
     }
 }
