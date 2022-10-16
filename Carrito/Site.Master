@@ -58,7 +58,7 @@
             </div>
         </div>    --%>
 
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+ <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" style="position:fixed; width:100%;margin-top:-50px; z-index:99;">
   <div class="container-fluid">
     <a class="navbar-brand" href="Default.aspx">Catalogo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
