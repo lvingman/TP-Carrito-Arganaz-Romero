@@ -34,13 +34,36 @@
                             <div class="card-body">
                                 <h4 class="card-title"><%#Eval("Nombre")%></h4>
                                 <p class="card-text"><%#Eval("Descripcion")%></p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<%#Eval("Id")%>">
+                                  Agregar a Carrito
+                                </button>
+                                <div class="modal fade" id="modal<%#Eval("Id")%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    
+                                      <div class="modal-body">
+                                        Articulo agregado con exito
+                                      </div>
+                                      <div class="modal-footer">
+                                        <asp:Button ID="btnAgregarCarrito" CssClass="btn btn-primary" runat="server" Text="Continuar en Catalogo" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarrito_Click"/>
+                                        <asp:Button ID="btnAgregarCarritoRedirect" CssClass="btn btn-primary" runat="server" Text="Ir a Carrito" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarritoRedirect_Click"/>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+               
                             </div>                             
-                            <asp:Button ID="btnAgregarCarrito" CssClass="btn btn-primary mx-2 my-1" runat="server" Text="Agregar a Carrito" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarrito_Click"/>
+                            
                         </div>
                     </div>
             </ItemTemplate>
         </asp:Repeater>
 
         </div>
+
+
+
+
+
 
 </asp:Content>

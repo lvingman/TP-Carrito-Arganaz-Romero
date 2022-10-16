@@ -42,6 +42,25 @@ namespace Carrito
             Session.Add("listaEnCarro", ListSesion);
         }
 
+        protected void btnAgregarCarritoRedirect_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            string valor = ((Button)sender).CommandArgument;
+            ItemCarrito nuevo = new ItemCarrito();
+            int idArt = int.Parse(((Button)sender).CommandArgument);
+            Articulo nuevoArticulo = BuscarProduc(idArt);
+
+            nuevo.Id = nuevoArticulo.Id;
+            nuevo.Nombre = nuevoArticulo.Nombre;
+            nuevo.Cantidad++;
+
+            List<ItemCarrito> ListSesion = ListaSessionCar();
+            ListSesion.Add(nuevo);
+            Session.Add("listaEnCarro", ListSesion);
+
+            Response.Redirect("Carrito.aspx");
+        }
+
         public Articulo BuscarProduc(int id)
         {
            Articulo art = new Articulo();
