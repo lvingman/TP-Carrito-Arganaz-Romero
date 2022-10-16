@@ -25,10 +25,37 @@ namespace Carrito
             }
 
         }
-
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        protected void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-            string valor = ((Button)sender).CommandArgument;
+            ArticuloNegocio negocio = new ArticuloNegocio();
+           string valor = ((Button)sender).CommandArgument;
+            ItemCarrito nuevo = new ItemCarrito();
+            int idArt = int.Parse(((Button)sender).CommandArgument);
+            Articulo nuevoArticulo = BuscarProduc(idArt);
+
+            nuevo.Id = nuevoArticulo.Id;
+            nuevo.Nombre = nuevoArticulo.Nombre;
+            nuevo.Cantidad++;
+
+            List<ItemCarrito> ListSesion = ListaSessionCar();
+            ListSesion.Add(nuevo);
+            Session.Add("listaEnCarro", ListSesion);
         }
+
+        public Articulo BuscarProduc(int id)
+        {
+           Articulo art = new Articulo();
+            art = listaArticulos.Find(x => x.Id == id);
+            return art;
+        }
+
+        private List<ItemCarrito> ListaSessionCar()
+        {
+            List<ItemCarrito> ItemEnCarro = Session["listaEnCarro"] != null ?
+                (List<ItemCarrito>)Session["listaEnCarro"] : new List<ItemCarrito>();
+            return ItemEnCarro;
+        }
+
+
     }
 }

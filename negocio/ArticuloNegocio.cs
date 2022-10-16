@@ -108,7 +108,37 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
+        public List<Articulo> BuscarProduc(int id)
+        {
+            List<Articulo> list = new List<Articulo>();           
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta(Diccionario.Buscar);
+                datos.setearParametro("ID", id);
+                datos.ejecutarAccion();
+                Articulo aux = new Articulo();
+                aux.Id = (int)datos.Lector["Id"];
+                aux.Codigo = (string)datos.Lector["Codigo"];
+                aux.Nombre = (string)datos.Lector["Nombre"];
+                aux.Descripcion = (string)datos.Lector["Descripcion"];
+                aux.URLImagen = (string)datos.Lector["ImagenURL"];
+                aux.Precio = (decimal)datos.Lector["Precio"];
+                aux.Marca = new Marca();
+                aux.Marca.ID = (int)datos.Lector["IdMarca"];
+                aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                aux.Categoria = new Categoria();
+                aux.Categoria.ID = (int)datos.Lector["IdCategoria"];
+                aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                list.Add(aux);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+       
+        }
         public void eliminar(int id)
         {
             try

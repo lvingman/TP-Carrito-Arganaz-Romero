@@ -35,7 +35,8 @@
                                 <h4 class="card-title"><%#Eval("Nombre")%></h4>
                                 <p class="card-text"><%#Eval("Descripcion")%></p>
                             </div>                             
-                           <a class="btn btn-primary mx-2 my-1" href="Carrito.aspx?id=<%#Eval("Id")%>">Agregar</a>                        
+                           <a class="btn btn-primary mx-2 my-1" href="Carrito.aspx?id=<%#Eval("Id")%>">Agregar</a>       
+                            <asp:Button ID="btnAgregarCarrito" CssClass="btn btn-primary" runat="server" Text="Carrito" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarrito_Click"/>
                         </div>
                     </div>
             </ItemTemplate>
