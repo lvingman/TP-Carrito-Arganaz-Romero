@@ -10,6 +10,9 @@ namespace Carrito
 {
     public partial class Contact : Page
     {
+        public List<int> cantidadArticulos { get; set; }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,6 +26,9 @@ namespace Carrito
                 (List<ItemCarrito>)Session["listaEnCarro"] : new List<ItemCarrito>();
             return ItemEnCarro;
         }
+
+
+
     }
    
 }

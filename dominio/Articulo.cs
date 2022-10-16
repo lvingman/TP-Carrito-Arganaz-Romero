@@ -14,7 +14,7 @@ namespace dominio
         [DisplayName("Código")]
         public string Codigo { get; set; }
 
-        
+
         public string Nombre { get; set; }
 
         [DisplayName("Descripción")]
@@ -32,4 +32,6 @@ namespace dominio
         public decimal Precio { get; set; }
 
     }
+
+
 }

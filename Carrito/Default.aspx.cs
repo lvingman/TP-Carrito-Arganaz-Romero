@@ -28,34 +28,47 @@ namespace Carrito
         protected void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-           string valor = ((Button)sender).CommandArgument;
-            ItemCarrito nuevo = new ItemCarrito();
-            int idArt = int.Parse(((Button)sender).CommandArgument);
-            Articulo nuevoArticulo = BuscarProduc(idArt);
-
-            nuevo.Id = nuevoArticulo.Id;
-            nuevo.Nombre = nuevoArticulo.Nombre;
-            nuevo.Cantidad++;
+            int idAgregar = int.Parse(((Button)sender).CommandArgument);
 
             List<ItemCarrito> ListSesion = ListaSessionCar();
-            ListSesion.Add(nuevo);
+            ItemCarrito aAgregar = new ItemCarrito();
+            if ((aAgregar = ListSesion.Find(x => x.Id == idAgregar)) != null){
+                aAgregar.Cantidad++;
+            }
+            else
+            {
+                ItemCarrito nuevoItem = new ItemCarrito();
+                Articulo nuevoArticulo = BuscarProduc(idAgregar);
+                nuevoItem.Id = nuevoArticulo.Id;
+                nuevoItem.Nombre = nuevoArticulo.Nombre;
+                nuevoItem.Cantidad++;
+                ListSesion.Add(nuevoItem);
+            }
+   
             Session.Add("listaEnCarro", ListSesion);
         }
 
         protected void btnAgregarCarritoRedirect_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            string valor = ((Button)sender).CommandArgument;
-            ItemCarrito nuevo = new ItemCarrito();
-            int idArt = int.Parse(((Button)sender).CommandArgument);
-            Articulo nuevoArticulo = BuscarProduc(idArt);
-
-            nuevo.Id = nuevoArticulo.Id;
-            nuevo.Nombre = nuevoArticulo.Nombre;
-            nuevo.Cantidad++;
+            int idAgregar = int.Parse(((Button)sender).CommandArgument);
 
             List<ItemCarrito> ListSesion = ListaSessionCar();
-            ListSesion.Add(nuevo);
+            ItemCarrito aAgregar;
+            if ((aAgregar = ListSesion.Find(x => x.Id == idAgregar)) != null)
+            {
+                aAgregar.Cantidad++;
+            }
+            else
+            {
+                ItemCarrito nuevoItem = new ItemCarrito();
+                Articulo nuevoArticulo = BuscarProduc(idAgregar);
+                nuevoItem.Id = nuevoArticulo.Id;
+                nuevoItem.Nombre = nuevoArticulo.Nombre;
+                nuevoItem.Cantidad++;
+                ListSesion.Add(nuevoItem);
+            }
+
             Session.Add("listaEnCarro", ListSesion);
 
             Response.Redirect("Carrito.aspx");
@@ -78,3 +91,5 @@ namespace Carrito
 
     }
 }
+
+
