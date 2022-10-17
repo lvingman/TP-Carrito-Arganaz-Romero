@@ -37,7 +37,7 @@
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<%#Eval("Id")%>">
                                   Agregar a Carrito
                                 </button>
-                                <div class="modal fade" id="modal<%#Eval("Id")%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+                                <div class="modal fade" data-keyboard="false" id="modal<%#Eval("Id")%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                     
