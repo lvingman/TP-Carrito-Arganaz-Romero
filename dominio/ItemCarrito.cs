@@ -12,6 +12,8 @@ namespace dominio
 
             public string Nombre { get; set; }
 
+            public string URLImagen { get; set; }
+
             public int Cantidad { get; set; }
         
     }

@@ -41,6 +41,7 @@ namespace Carrito
                 Articulo nuevoArticulo = BuscarProduc(idAgregar);
                 nuevoItem.Id = nuevoArticulo.Id;
                 nuevoItem.Nombre = nuevoArticulo.Nombre;
+                nuevoItem.URLImagen = nuevoArticulo.URLImagen;
                 nuevoItem.Cantidad++;
                 ListSesion.Add(nuevoItem);
             }
@@ -65,6 +66,7 @@ namespace Carrito
                 Articulo nuevoArticulo = BuscarProduc(idAgregar);
                 nuevoItem.Id = nuevoArticulo.Id;
                 nuevoItem.Nombre = nuevoArticulo.Nombre;
+                nuevoItem.URLImagen = nuevoArticulo.URLImagen;
                 nuevoItem.Cantidad++;
                 ListSesion.Add(nuevoItem);
             }
