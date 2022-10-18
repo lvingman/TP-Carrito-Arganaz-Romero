@@ -15,10 +15,17 @@ namespace Carrito
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             List<ItemCarrito> ListSesion = ListaSessionCar();
             dgvCarrito.DataSource = ListSesion;
             dgvCarrito.DataBind();
+            if (dgvCarrito.Rows.Count > 0)
+            {
+                dgvCarrito.HeaderRow.Style["background-color"] = "#f0f2f4";
+                
+            }
+
+
         }
         private List<ItemCarrito> ListaSessionCar()
         {

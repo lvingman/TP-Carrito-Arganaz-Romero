@@ -42,6 +42,7 @@ namespace Carrito
                 nuevoItem.Id = nuevoArticulo.Id;
                 nuevoItem.Nombre = nuevoArticulo.Nombre;
                 nuevoItem.URLImagen = nuevoArticulo.URLImagen;
+                nuevoItem.Precio = nuevoArticulo.Precio;
                 nuevoItem.Cantidad++;
                 ListSesion.Add(nuevoItem);
             }
@@ -67,6 +68,7 @@ namespace Carrito
                 nuevoItem.Id = nuevoArticulo.Id;
                 nuevoItem.Nombre = nuevoArticulo.Nombre;
                 nuevoItem.URLImagen = nuevoArticulo.URLImagen;
+                nuevoItem.Precio = nuevoArticulo.Precio;
                 nuevoItem.Cantidad++;
                 ListSesion.Add(nuevoItem);
             }
