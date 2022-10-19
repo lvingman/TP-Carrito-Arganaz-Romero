@@ -24,6 +24,8 @@ namespace Carrito
                 dgvCarrito.HeaderRow.Style["background-color"] = "#f0f2f4";
                 
             }
+         //  SumaColumna();
+            
 
 
         }
@@ -34,7 +36,17 @@ namespace Carrito
             return ItemEnCarro;
         }
 
+        //public void SumaColumna()
+        //{
+        //    decimal Total = 0;
 
+        //    foreach (DataGridItem row in dgvCarrito.Rows)
+        //    {
+        //        Total += Convert.ToDecimal(row.Cells["Precio"].Value);
+
+        //    }
+        //    lblTotal.Text = Total.ToString();
+        //}
 
     }
    

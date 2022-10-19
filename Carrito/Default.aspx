@@ -34,6 +34,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><%#Eval("Nombre")%></h4>
                                 <p class="card-text"><%#Eval("Descripcion")%></p>
+                                <p class="card-text"> $<%#Eval("Precio")%></p>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<%#Eval("Id")%>">
                                   Agregar a Carrito
                                 </button>
@@ -45,7 +46,7 @@
                                         Articulo agregado con exito
                                       </div>
                                       <div class="modal-footer">
-                                        <asp:Button ID="btnAgregarCarrito" CssClass="btn btn-primary" runat="server" Text="Continuar en Catalogo" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarrito_Click"/>
+                                        <asp:Button ID="btnAgregarCarrito" CssClass="btn btn-primary" runat="server" Text="Continuar aqui" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarrito_Click"/>
                                         <asp:Button ID="btnAgregarCarritoRedirect" CssClass="btn btn-primary" runat="server" Text="Ir a Carrito" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarritoRedirect_Click"/>
                                       </div>
                                     </div>

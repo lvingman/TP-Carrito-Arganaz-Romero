@@ -15,10 +15,11 @@
             </asp:BoundField>
             <asp:ImageField   ControlStyle-Width="50" ControlStyle-Height="50" ControlStyle-CssClass="rounded mx-auto d-block" DataImageUrlField="URLImagen" HeaderText="Imagen">
             </asp:ImageField> 
-            <asp:BoundField DataField="Precio" HeaderText="Precio Unitario" />
+            <asp:BoundField DataField="Precio" HeaderText="Precio" />
             <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
         </Columns>
-
     </asp:GridView>
 
+    <asp:Label ID="lblt" CssClass="label alert-primary" runat="server" Text="Total a Pagar:"></asp:Label>
+    <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
 </asp:Content>
