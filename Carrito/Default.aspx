@@ -42,8 +42,9 @@
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                     
-                                      <div class="modal-body">
-                                        Articulo agregado con exito
+                                      <div class="modal-body" style="color:green">
+                                       Articulo agregado con exito
+                                       <i class="fa fa-check-circle" aria-hidden="true"></i>
                                       </div>
                                       <div class="modal-footer">
                                         <asp:Button ID="btnAgregarCarrito" CssClass="btn btn-primary" runat="server" Text="Continuar aqui" CommandArgument='<%#Eval("Id")%>' CommandName="ArticuloId" OnClick="btnAgregarCarrito_Click"/>
