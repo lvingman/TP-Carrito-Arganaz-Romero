@@ -59,15 +59,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Carrito.aspx">Carrito</a>
-        </li>              
-          <li>
-                        <asp:LinkButton ID="btnCarrito" runat="server" CssClass="btn alert-primary">                             
-                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                     
-                        </asp:LinkButton>
-           </li>            
+                  
+        <li>
+            <asp:LinkButton ID="btnCarrito" PostBackUrl="Carrito.aspx" runat="server" CssClass="btn alert-primary">                             
+                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+               <%  if  (CarritoVacio() > 0)
+                        {
+                        %>
+              
+                <span class="badge badge-danger"> <%= CarritoVacio() %></span>            
+             
+                <%
+                    }
+                %>
+               
+            </asp:LinkButton>
+        </li>            
       </ul>
       <div class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Búsqueda..." aria-label="Search">
