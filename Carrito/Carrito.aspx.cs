@@ -45,7 +45,28 @@ namespace Carrito
             lblTotal.Text = a.ToString();
         }
 
-   
+        protected void dgvCarrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idd = dgvCarrito.SelectedRow.Cells[0].Text;
+            foreach (ItemCarrito item in ListaSessionCar())
+            {
+                int itemid = Convert.ToInt32(item.Id);
+                int id = Convert.ToInt32(idd);
+                if (id == itemid)
+                {
+                    item.Cantidad--;
+                    if (item.Cantidad == 0)
+                    {
+                        item.Precio = 0;
+                        item.Id = 0;
+                        item.Nombre = "0";
+                        Response.Redirect("carrito.aspx");
+                    }                 
+                }
+               
+            }
+
+        }
     }
    
 }
