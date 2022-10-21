@@ -57,11 +57,10 @@ namespace Carrito
                     item.Cantidad--;
                     if (item.Cantidad == 0)
                     {
-                        item.Precio = 0;
-                        item.Id = 0;
-                        item.Nombre = "0";
-                        Response.Redirect("carrito.aspx");
-                    }                 
+                        ListaSessionCar().Remove(item);
+                        
+                    }
+                    Response.Redirect("carrito.aspx");
                 }
                
             }

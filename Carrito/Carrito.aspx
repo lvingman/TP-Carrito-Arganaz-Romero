@@ -19,7 +19,7 @@
             <asp:BoundField DataField="Precio" HeaderText="Precio" />
             <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
 
-            <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
+            <asp:CommandField ShowSelectButton="true" SelectText="Eliminar" HeaderText="Acción" />
              
 
               
