@@ -16,6 +16,7 @@ namespace Carrito
 
         protected void Page_Load(object sender, EventArgs e)
         {
+        
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
 
@@ -25,6 +26,8 @@ namespace Carrito
             }
 
         }
+
+
         protected void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -92,8 +95,26 @@ namespace Carrito
             return ItemEnCarro;
         }
 
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+                List<Articulo> listaFiltrada;
+                string filtro = txtFiltro.Text;
 
+                if (filtro != "")
+                {
+                    listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                }
+                else
+                {
+
+                    listaFiltrada = listaArticulos;
+
+                }
+
+                Repeter.DataSource = listaFiltrada;
+                Repeter.DataBind();         
+        }
     }
-}
+    }
 
 
